@@ -1,18 +1,19 @@
- // Telegram Web Apps SDK
- window.TelegramWebApps = window.TelegramWebApps || {};
- window.TelegramWebApps.ready = function() {
-     const user = window.TelegramWebApps.initDataUnsafe.user;
-     if (user) {
-         document.getElementById('user-name').innerText = `Ism: ${user.first_name} ${user.last_name || ''}`;
-         document.getElementById('user-id').innerText = `ID: ${user.id}`;
-     } else {
-         document.getElementById('user-name').innerText = 'Foydalanuvchi ma\'lumotlari topilmadi.';
-     }
- };
+// main.js
+window.onload = function() {
+    // Telegram Web Apps SDK
+    if (window.TelegramWebApps) {
+        window.TelegramWebApps.ready();
 
- // Initialize the Telegram Web App SDK
- if (window.TelegramWebApps) {
-     window.TelegramWebApps.ready();
- } else {
-     console.error('Telegram Web Apps SDK topilmadi.');
- }
+        // Get user information from Telegram Web Apps SDK
+        const user = window.TelegramWebApps.initDataUnsafe.user;
+
+        if (user) {
+            document.getElementById('user-name').innerText = `Ism: ${user.first_name} ${user.last_name || ''}`;
+            document.getElementById('user-id').innerText = `ID: ${user.id}`;
+        } else {
+            document.getElementById('user-name').innerText = 'Foydalanuvchi ma\'lumotlari topilmadi.';
+        }
+    } else {
+        console.error('Telegram Web Apps SDK topilmadi.');
+    }
+};
