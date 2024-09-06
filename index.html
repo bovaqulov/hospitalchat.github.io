@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xabar Formasi</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <title>Telegram Web App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Xabar yuborish</h1>
+        <h1>Telegram Web App</h1>
+        <div id="user-info">
+            <p id="user-name"></p>
+            <p id="user-id"></p>
+        </div>
         <form action="#" method="post">
-            <label for="name">Ismingiz:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
             <label for="message">Xabar:</label>
             <textarea id="message" name="message" rows="5" required></textarea>
-            
             <button type="submit">Yuborish</button>
         </form>
     </div>
+
+    <script href="static/js/main.js"></script>
 </body>
 </html>
