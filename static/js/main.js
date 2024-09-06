@@ -1,10 +1,9 @@
-// main.js
 window.onload = function() {
-    // Telegram Web Apps SDK
+    // Check if Telegram Web Apps SDK is available
     if (window.TelegramWebApps) {
         window.TelegramWebApps.ready();
 
-        // Get user information from Telegram Web Apps SDK
+        // Extract user information from Telegram Web Apps SDK
         const user = window.TelegramWebApps.initDataUnsafe.user;
 
         if (user) {
